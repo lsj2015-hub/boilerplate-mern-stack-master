@@ -7,6 +7,8 @@ import LoginPage from './views/LoginPage/LoginPage.js';
 import RegisterPage from './views/RegisterPage/RegisterPage.js';
 import NavBar from './views/NavBar/NavBar';
 import Footer from './views/Footer/Footer';
+import MovieDetail from './views/MovieDetail/MovieDetail';
+import FavoritePage from './views/FavoritePage/FavoritePage';
 
 //null   Anyone Can go inside
 //true   only logged in user can go inside
@@ -21,6 +23,8 @@ function App() {
           <Route path="/" element={Auth(LandingPage, null)} />
           <Route path="/login" element={Auth(LoginPage, false)} />
           <Route path="/register" element={Auth(RegisterPage, false)} />
+          <Route path="/movie/:movieId" element={Auth(MovieDetail, null)} />
+          <Route path="/favorite" element={Auth(FavoritePage, true)} />
         </Routes>
       </div>
       <Footer />
